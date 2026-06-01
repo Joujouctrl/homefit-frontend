@@ -1,0 +1,666 @@
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+}
+.hero-title-container {
+  color: white;
+
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.hero-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1.5px solid white;
+  color: white;
+}
+
+.btn.filled {
+  background-color: white;
+  color: #a38b7a;
+}
+
+/* Slogan Style */
+.slogan-wrapper {
+  background-color: #f7f3f0;
+  padding: 40px 20px;
+  text-align: center;
+   margin-top: 0px;
+  
+}
+
+.slogan-cursive {
+  /* Khass t-importi "Great Vibes" f index.html dyal Vite */
+  font-family: 'Great Vibes', cursive; 
+  font-size: 4.5rem;
+  color: #6d5b4e;
+  font-weight: 400;
+}
+
+/* Footer Style */
+.home-footer {
+  background-color: #a38b7a;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+
+/* Transparent فوق الصورة */
+.navbar.transparent {
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+  color: white;
+
+}
+
+/* ملي تهبط ولا فـ صفحات أخرى */
+.navbar.solid {
+  background: white;
+  color: black;
+ 
+}
+
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  margin-left: auto;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  position: relative;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('/image-home-fit.jpeg') center/cover no-repeat;
+
+  background-attachment: fixed; /* هادي المهمة */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 70px; /* باش navbar ما تغطيش */
+   margin-top: 0;
+}
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+}
+.app-section {
+  background: white;
+  padding: 40px 40px;
+  margin: 0;
+  text-align: center;
+  background-color: #f7f3f0 ;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+   background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              url('/image-home-fit.jpg') center/cover no-repeat;
+}
+
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-card input,
+.login-card select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.login-card button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #a38b7a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  opacity: 0.9;
+}
+
+.forgot {
+  text-align: center;
+  font-size: 0.9rem;
+}
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #6d5b4e;
+}
+
+.card-info {
+  padding: 15px;
+  text-align: left;
+}
+
+.card-info p {
+  color: gray;
+}
+
+.card-info span {
+  font-weight: bold;
+  color: #a38b7a;
+}
+.details-container {
+  padding: 70px;
+  width:100vw ;
+  background-color: #f7f3f0;
+  
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.images-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.description {
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+body {
+  overflow-x: hidden;
+}
+/* Buttons admin */
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-admin {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-add {
+  background: #a38b7a;
+  color: white;
+}
+
+.btn-edit {
+  background: #f1eae5;
+  color: #6d5b4e;
+}
+
+.btn-delete {
+  background: #ffe5e5;
+  color: #c0392b;
+}
+
+.btn-admin:hover {
+  transform: scale(1.05);
+}
+.cardtech {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 10px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.notif {
+  display: flex;
+  justify-content: space-between;
+  background: #fff3cd;
+}
+
+.history {
+  background: #e8f8f5;
+}
+.chat-container {
+  padding: 100px 40px;
+  background: #f7f3f0;
+  height: 100vh;
+}
+
+.chat-box {
+  background: white;
+  height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* messages */
+.msg {
+  max-width: 60%;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.msg.client {
+  background: #a38b7a;
+  color: white;
+  margin-left: auto;
+}
+
+.msg.tech {
+  background: #eee;
+}
+
+.msg span {
+  font-size: 10px;
+  display: block;
+  margin-top: 5px;
+}
+
+/* input */
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.chat-input button {
+  background: #a38b7a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.chat-img {
+  width: 200px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.preview-img {
+  width: 100px;
+  border-radius: 10px;
+}
+
+
+
+.tech-container {
+  padding: 100px 40px;
+  background: #f7f3f0;
+  min-height: 100vh;
+}
+
+.tech-container h2 {
+  margin-bottom: 20px;
+}
+
+.tech-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.notif {
+  background: #fff3cd;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.task button {
+  background: #a38b7a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.history-item {
+  margin-bottom: 5px;
+}
+.admin-card {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+.contact-tech-button {
+  background: #a38b7a;
+  padding: 100px 40px;
+  min-height: 100vh;
+}
+.logo-section{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img{
+  width: 80px;
+  height: 80px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  background: transparent;
+}
+
+.logo{
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+.navbar{
+  height: 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+
+  background: rgba(0,0,0,0.35);
+
+  backdrop-filter: blur(10px);
+
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.chatbot-box{
+
+  width: 80%;
+
+  margin: 80px auto;
+
+  padding: 30px;
+
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+
+  color: white;
+}
+
+.chatbot-box textarea{
+
+  width: 100%;
+
+  height: 120px;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  border: none;
+
+  margin-top: 20px;
+
+  outline: none;
+}
+
+.chatbot-box button{
+
+  margin-top: 20px;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: white;
+
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+.chat-response{
+
+  margin-top: 25px;
+
+  padding: 20px;
+
+  background: rgba(255,255,255,0.1);
+
+  border-radius: 15px;
+}
+.chatbot-container{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 340px;
+  height: 500px;
+
+  background: rgba(30,20,15,0.95);
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+  z-index: 9999;
+
+  backdrop-filter: blur(10px);
+}
+
+.chat-header{
+  padding: 18px;
+
+  text-align: center;
+
+  color: white;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  background: rgba(255,255,255,0.05);
+}
+
+.chat-body{
+  flex: 1;
+
+  padding: 15px;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.user-msg{
+  align-self: flex-end;
+
+  background: white;
+
+  color: #3d2b1f;
+
+  padding: 12px 15px;
+
+  border-radius: 18px;
+
+  max-width: 80%;
+}
+
+.bot-msg{
+  align-self: flex-start;
+
+  background: rgba(255,255,255,0.1);
+
+  color: white;
+
+  padding: 12px 15px;
+
+  border-radius: 18px;
+
+  max-width: 80%;
+}
+
+.chat-footer{
+  display: flex;
+
+  padding: 12px;
+
+  gap: 10px;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.chat-footer input{
+  flex: 1;
+
+  border: none;
+
+  outline: none;
+
+  padding: 12px;
+
+  border-radius: 15px;
+
+  background: rgba(255,255,255,0.1);
+
+  color: white;
+}
+
+.chat-footer button{
+  border: none;
+
+  padding: 12px 15px;
+
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  background: white;
+
+  color: #3d2b1f;
+
+  font-weight: bold;
+}
