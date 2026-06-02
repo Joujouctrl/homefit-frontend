@@ -67,7 +67,7 @@ const Home = () => {
       </section>
 
       {/* Appartements */}
-    {localStorage.getItem("role") !== "admin"  && localStorage.getItem("role") !== "technicien" &&(
+    {localStorage.getItem("role") !== "admin" &&(
       <section className="app-section">
         <div className="grid">
           {appartements.map((app) => (
