@@ -15,7 +15,14 @@ import AdminReservations from "./Pages/AdminReservations";
 import Paiment from "./Pages/Paiment";
 import Dashboard from "./Pages/Dashboard";
 import AdminTechniciens from "./Pages/AdminTechniciens";
+const ProtectedRoute = ({ element, allowedRoles }) => {
+  const token = localStorage.getItem("token");
+  const role = localStorage.getItem("role");
 
+  if (!token) return <Navigate to="/login" />;
+  if (!allowedRoles.includes(role)) return <Navigate to="/" />;
+  return element;
+};
 
 function App() {
   return (

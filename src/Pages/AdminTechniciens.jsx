@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://homefit-backend-rjab.onrender.com";
 
 export default function AdminTechniciens() {
   const [techniciens, setTechniciens] = useState([]);
@@ -14,14 +14,14 @@ export default function AdminTechniciens() {
 
   const loadData = async () => {
     try {
-      // ✅ Charger les techniciens
+      // Charger les techniciens
       const r1 = await fetch(`${BASE_URL}/api/users/techniciens`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const d1 = await r1.json();
       setTechniciens(d1.success ? d1.data : []);
 
-      // ✅ Charger toutes les pannes avec interventions
+      // Charger toutes les pannes avec interventions
       const r2 = await fetch(`${BASE_URL}/api/admin/pannes`, {
         headers: { Authorization: `Bearer ${token}` },
       });

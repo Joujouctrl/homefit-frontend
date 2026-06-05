@@ -8,19 +8,13 @@ const Home = () => {
   const navigate = useNavigate();
   const role = localStorage.getItem("role");
   const [appartements, setAppartements] = useState([]);
-  useEffect(() => {
-    const storedName = localStorage.getItem("userName");
-    if (storedName) {
-      setUserName(storedName);
-    }
-  }, []);
 
   useEffect(() => {
     const storedName = localStorage.getItem("userName");
     if (storedName) setUserName(storedName);
 
     // Fetch les 3 premiers appartements
-    fetch("http://localhost:8000/api/appartements")
+    fetch("https://homefit-backend-rjab.onrender.com/api/appartements")
       .then(r => r.json())
       .then(data => setAppartements(data.slice(0, 3)))
       .catch(err => console.error(err));
@@ -76,7 +70,7 @@ const Home = () => {
               key={app.id}
               onClick={() => navigate(`/appartement/${app.id}`)}
             >
-              <img src={app.images?.[0]?.image ? `http://localhost:8000/${app.images[0].image}` : "/placeholder.jpg"} alt={app.titre} />
+              <img src={app.images?.[0]?.image ? `https://homefit-backend-rjab.onrender.com/${app.images[0].image}` : "/placeholder.jpg"} alt={app.titre} />
 
               <div className="card-info">
                 <h3>{app.titre}</h3>

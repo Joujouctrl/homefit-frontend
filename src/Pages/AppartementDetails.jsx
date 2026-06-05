@@ -4,7 +4,7 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://homefit-backend-rjab.onrender.com";
 
 export default function AppartementDetails() {
   const { id } = useParams();

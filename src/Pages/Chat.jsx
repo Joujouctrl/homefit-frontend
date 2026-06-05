@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://homefit-backend-rjab.onrender.com";
 
 export default function Chat() {
   const [conversations, setConversations] = useState([]); // liste des interlocuteurs

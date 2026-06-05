@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";  // ✅useEffect ajouté
+import React, { useState, useEffect } from "react";  // useEffect ajouté
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = "http://localhost:8000"; //  URL du backend
+const BASE_URL = "https://homefit-backend-rjab.onrender.com"; //  URL du backend
 
 const Appartements = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Appartements = () => {
 
   //  Charger les appartements depuis le backend au démarrage
   useEffect(() => {
-  fetch("http://localhost:8000/api/appartements")
+  fetch("https://homefit-backend-rjab.onrender.com/api/appartements")
     .then(function(res) { return res.json(); })
     .then(function(data) {
       console.log("data:", data);
@@ -36,11 +36,11 @@ const Appartements = () => {
     if (app.images && app.images.length > 0) {
       const img = app.images[0].image;
       if (img.startsWith("http")) return img;
-      return `http://localhost:8000/${img}`;
+      return `${BASE_URL}/${img}`;
     }
     if (app.image) {
       if (app.image.startsWith("http")) return app.image;
-      return `http://localhost:8000/${app.image}`;
+      return `${BASE_URL}/${app.image}`;
     }
     return null;
   };

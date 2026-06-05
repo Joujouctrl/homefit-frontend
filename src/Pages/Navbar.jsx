@@ -9,7 +9,7 @@ export default function Navbar() {
   const handleLogout = async () => {
   const token = localStorage.getItem("token");
   try {
-    await fetch("http://localhost:8000/api/logout", {
+    await fetch("https://homefit-backend-rjab.onrender.com/api/logout", {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json",},
     });

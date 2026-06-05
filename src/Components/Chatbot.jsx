@@ -18,7 +18,7 @@ export default function Chatbot() {
     setMessages((prev) => [...prev, userMsg]);
 
     try {
-      const response = await axios.post("http://localhost:8000/api/chatbot", {
+      const response = await axios.post("https://homefit-backend-rjab.onrender.com/api/chatbot", {
         message: message 
       });
 

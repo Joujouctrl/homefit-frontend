@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://homefit-backend-rjab.onrender.com";
 
 export default function MyReservations() {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://homefit-backend-rjab.onrender.com";
 
 export default function AdminReservations() {
   const [reservations, setReservations] = useState([]);
