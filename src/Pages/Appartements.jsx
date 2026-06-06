@@ -30,6 +30,16 @@ const Appartements = () => {
       setLoading(false);
     });
 }, []);
+// 1. Ajoute ce state après les autres states
+const [villeFilter, setVilleFilter] = useState("toutes");
+
+// 2. Extraire les villes uniques depuis les appartements
+const villes = ["toutes", ...new Set(appartements.map(a => a.ville))];
+
+// 3. Filtrer les appartements
+const appartementsFiltres = villeFilter === "toutes" 
+  ? appartements 
+  : appartements.filter(a => a.ville === villeFilter);
 
   // Construire l'URL complète de l'image principale
   const getImageUrl = (app) => {
@@ -171,10 +181,22 @@ const Appartements = () => {
           )}
         </div>
       )}
+      {/* ✅ Filtre par ville */}
+      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "25px" }}>
+        {villes.map((ville) => (
+          <button
+            key={ville}
+            onClick={() => setVilleFilter(ville)}
+            style={{padding: "8px 18px", borderRadius: "20px", border: `2px solid ${villeFilter === ville ? "#4E342E" : "#E6DFD3"}`,backgroundColor: villeFilter === ville ? "#4E342E" : "#FDFBF7",
+              color: villeFilter === ville ? "#FDFBF7" : "#4E342E",cursor: "pointer",fontWeight: "600",fontSize: "13px",textTransform: "capitalize" }}>
+            {ville === "toutes" ? "🏙️ Toutes les villes" : `📍 ${ville}`}
+          </button>
+        ))}
+      </div>
 
       {/* GRID */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "30px", width: "100%" }}>
-        {appartements.map((app) => (
+        {appartementsFiltres.map((app) => (
           <div
             className="card"
             key={app.id}

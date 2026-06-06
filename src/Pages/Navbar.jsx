@@ -24,10 +24,12 @@ export default function Navbar() {
   return (
     <nav className="navbar transparent">
       {/* LEFT — Logo */}
-      <div className="logo-section">
-        <img src="/Logo.png" alt="logo" className="logo-img" />
-        <div className="logo">HomeFit</div>
-      </div>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <div className="logo-section">
+          <img src="/Logo.png" alt="logo" className="logo-img" />
+          <div className="logo">HomeFit</div>
+        </div>
+      </Link>
 
       {/* RIGHT — Links selon le rôle */}
       <div className="nav-links">
