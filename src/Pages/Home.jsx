@@ -61,7 +61,7 @@ const Home = () => {
       </section>
 
       {/* Appartements */}
-    {localStorage.getItem("role") !== "admin" &&(
+    {!["admin", "technicien"].includes(localStorage.getItem("role")) &&(
       <section className="app-section">
         <div className="grid">
           {appartements.map((app) => (
