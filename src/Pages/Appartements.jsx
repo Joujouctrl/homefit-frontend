@@ -181,7 +181,7 @@ const appartementsFiltres = villeFilter === "toutes"
           )}
         </div>
       )}
-      {/* ✅ Filtre par ville */}
+      {/*  Filtre par ville */}
       <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "25px" }}>
         {villes.map((ville) => (
           <button
@@ -189,7 +189,7 @@ const appartementsFiltres = villeFilter === "toutes"
             onClick={() => setVilleFilter(ville)}
             style={{padding: "8px 18px", borderRadius: "20px", border: `2px solid ${villeFilter === ville ? "#4E342E" : "#E6DFD3"}`,backgroundColor: villeFilter === ville ? "#4E342E" : "#FDFBF7",
               color: villeFilter === ville ? "#FDFBF7" : "#4E342E",cursor: "pointer",fontWeight: "600",fontSize: "13px",textTransform: "capitalize" }}>
-            {ville === "toutes" ? "🏙️ Toutes les villes" : `📍 ${ville}`}
+            {ville === "toutes" ? " Toutes les villes" : ` ${ville}`}
           </button>
         ))}
       </div>
