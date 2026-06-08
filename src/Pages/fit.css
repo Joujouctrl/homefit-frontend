@@ -129,6 +129,7 @@
 }
 
 .logo {
+  color: white !important;
   font-size: 28px;
   font-weight: bold;
 }
@@ -655,6 +656,7 @@ body {
 
   /* Logo */
   .logo {
+    color: white !important;
     font-size: 20px;
   }
 
