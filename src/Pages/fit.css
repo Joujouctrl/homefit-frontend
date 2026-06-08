@@ -664,3 +664,55 @@ body {
 
   font-weight: bold;
 }
+/* ✅ Hamburger — caché sur desktop */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* ✅ Bouton déconnexion */
+.logout-btn {
+  background-color: transparent;
+  border: 1px solid #A39081;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ✅ Responsive — écran < 768px */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block; /* visible sur mobile */
+  }
+
+  .nav-links {
+    display: none; /* caché par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    padding: 20px;
+    gap: 15px;
+    z-index: 999;
+  }
+
+  .nav-links.nav-open {
+    display: flex; /* visible quand menu ouvert */
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+}

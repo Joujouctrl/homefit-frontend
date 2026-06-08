@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
@@ -6,81 +6,89 @@ export default function Navbar() {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const handleLogout = async () => {
-  const token = localStorage.getItem("token");
-  try {
-    await fetch("https://homefit-backend-rjab.onrender.com/api/logout", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json",},
-    });
-  } catch (err) {
-    console.error(err);
-  } finally {
-    localStorage.clear();
-    navigate("/login");
-  }
+    try {
+      await fetch("https://homefit-backend-rjab.onrender.com/api/logout", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      });
+    } catch (err) {
+      console.error(err);
+    } finally {
+      localStorage.clear();
+      navigate("/login");
+    }
   };
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <nav className="navbar transparent">
-      {/* LEFT — Logo */}
-      <Link to="/" style={{ textDecoration: "none" }}>
+
+      {/* Logo */}
+      <Link to="/" style={{ textDecoration: "none" }} onClick={closeMenu}>
         <div className="logo-section">
           <img src="/Logo.png" alt="logo" className="logo-img" />
           <div className="logo">HomeFit</div>
         </div>
       </Link>
 
-      {/* RIGHT — Links selon le rôle */}
-      <div className="nav-links">
+      {/* Hamburger button */}
+      <button
+        onClick={() => setMenuOpen(!menuOpen)}
+        className="hamburger-btn"
+      >
+        {menuOpen ? "✕" : "☰"}
+      </button>
 
-        {/* CLIENT */}
+      {/* Links */}
+      <div className={`nav-links ${menuOpen ? "nav-open" : ""}`}>
+
         {token && role === "client" && (
           <>
-            <Link to="/">Accueil</Link>
-            <Link to="/appartements">Appartements</Link>
-            <Link to="/MyReservations">Mes Réservations</Link>
-            <Link to="/chat">Messagerie</Link>
-            <Link to="/ContactTechnicien">Réclamation</Link>
+            <Link to="/" onClick={closeMenu}>Accueil</Link>
+            <Link to="/appartements" onClick={closeMenu}>Appartements</Link>
+            <Link to="/MyReservations" onClick={closeMenu}>Mes Réservations</Link>
+            <Link to="/chat" onClick={closeMenu}>Messagerie</Link>
+            <Link to="/ContactTechnicien" onClick={closeMenu}>Réclamation</Link>
           </>
         )}
 
-        {/*  TECHNICIEN */}
         {token && role === "technicien" && (
           <>
-            <Link to="/">Accueil</Link>
-            <Link to="/Technicien">Tableau de Bord</Link>
-            <Link to="/chat">Messagerie</Link>
+            <Link to="/" onClick={closeMenu}>Accueil</Link>
+            <Link to="/Technicien" onClick={closeMenu}>Tableau de Bord</Link>
+            <Link to="/chat" onClick={closeMenu}>Messagerie</Link>
           </>
         )}
 
-        {/*  ADMIN */}
         {token && role === "admin" && (
           <>
-            <Link to="/">Accueil</Link>
-            <Link to="/dashboard">Dashboard</Link>
-            <Link to="/appartements">Appartements</Link>
-            <Link to="/AdminReservations">Gestion Réservations</Link>
-            <Link to="/AdminTechniciens">Techniciens</Link>
+            <Link to="/" onClick={closeMenu}>Accueil</Link>
+            <Link to="/dashboard" onClick={closeMenu}>Dashboard</Link>
+            <Link to="/appartements" onClick={closeMenu}>Appartements</Link>
+            <Link to="/AdminReservations" onClick={closeMenu}>Gestion Réservations</Link>
+            <Link to="/AdminTechniciens" onClick={closeMenu}>Techniciens</Link>
           </>
         )}
 
-        {/* NON CONNECTÉ */}
         {!token && (
           <>
-            <Link to="/">Accueil</Link>
-            <Link to="/appartements">Appartements</Link>
-            <Link to="/login">Connexion</Link>
-            <Link to="/signup">Inscription</Link>
+            <Link to="/" onClick={closeMenu}>Accueil</Link>
+            <Link to="/appartements" onClick={closeMenu}>Appartements</Link>
+            <Link to="/login" onClick={closeMenu}>Connexion</Link>
+            <Link to="/signup" onClick={closeMenu}>Inscription</Link>
           </>
         )}
 
-        {/*  Bouton Déconnexion si connecté */}
         {token && (
           <button
-            onClick={handleLogout}
-            style={{backgroundColor: "transparent",border: "1px solid #A39081",color: "#4E342E", padding: "6px 16px", borderRadius: "20px",cursor: "pointer",
-              fontWeight: "600",fontSize: "14px", fontFamily: "'Segoe UI', sans-serif"}}>Déconnexion 
+            onClick={() => { handleLogout(); closeMenu(); }}
+            className="logout-btn"
+          >
+            Déconnexion
           </button>
         )}
       </div>
